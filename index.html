@@ -1,1285 +1,155 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#ffffff">
-  <meta name="description" content="Asesoría contable y financiera personalizada para personas y empresas. Organiza tus finanzas y toma decisiones con confianza junto a Darlyn Dávila.">
-  <title>Darlyn Dávila | Contadora pública y asesora financiera</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      color-scheme: light;
-      --color-ink: #171717;
-      --color-muted: #69665f;
-      --color-gold: #d4af37;
-      --color-gold-dark: #a7831d;
-      --color-cream: #fbf9f4;
-      --color-border: #ebe7de;
-      --shadow-card: 0 14px 40px rgba(28, 25, 18, 0.08);
-      --font-body: "Poppins", sans-serif;
-      --font-display: "DM Serif Display", Georgia, serif;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 88px;
-    }
-
-    body {
-      margin: 0;
-      background: #fff;
-      color: var(--color-ink);
-      font-family: var(--font-body);
-      line-height: 1.7;
-    }
-
-    body,
-    button,
-    input,
-    textarea {
-      font-family: var(--font-body);
-    }
-
-    img {
-      display: block;
-      max-width: 100%;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    button,
-    a,
-    input,
-    textarea {
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    :focus-visible {
-      outline: 3px solid var(--color-gold-dark);
-      outline-offset: 4px;
-    }
-
-    .container {
-      width: min(1160px, calc(100% - 48px));
-      margin-inline: auto;
-    }
-
-    .eyebrow {
-      margin: 0 0 12px;
-      color: var(--color-gold-dark);
-      font-size: 0.76rem;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-    }
-
-    .section-heading {
-      max-width: 680px;
-      margin: 0 auto 16px;
-      font-family: var(--font-display);
-      font-size: clamp(2.2rem, 4vw, 3.5rem);
-      font-weight: 400;
-      line-height: 1.15;
-      text-align: center;
-    }
-
-    .section-intro {
-      max-width: 650px;
-      margin: 0 auto;
-      color: var(--color-muted);
-      text-align: center;
-    }
-
-    /* Encabezado y navegación principal */
-    .site-header {
-      position: sticky;
-      z-index: 10;
-      top: 0;
-      background: rgba(255, 255, 255, 0.96);
-      border-bottom: 1px solid rgba(235, 231, 222, 0.8);
-      backdrop-filter: blur(14px);
-    }
-
-    .navbar {
-      display: flex;
-      min-height: 82px;
-      align-items: center;
-      justify-content: space-between;
-      gap: 28px;
-    }
-
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      flex-shrink: 0;
-    }
-
-    .brand img {
-      width: 54px;
-      height: 54px;
-      border-radius: 50%;
-      object-fit: cover;
-      object-position: center 35%;
-    }
-
-    .brand-copy {
-      display: grid;
-      line-height: 1.25;
-    }
-
-    .brand-copy strong {
-      font-family: var(--font-display);
-      font-size: 1.25rem;
-      font-weight: 400;
-    }
-
-    .brand-copy span {
-      color: var(--color-muted);
-      font-size: 0.63rem;
-      letter-spacing: 0.13em;
-      text-transform: uppercase;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: clamp(18px, 3vw, 38px);
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .nav-links a {
-      color: #38362f;
-      font-size: 0.85rem;
-      font-weight: 500;
-      transition: color 180ms ease;
-    }
-
-    .nav-links a:hover {
-      color: var(--color-gold-dark);
-    }
-
-    .menu-toggle {
-      display: none;
-      width: 44px;
-      height: 44px;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid var(--color-border);
-      border-radius: 50%;
-      background: #fff;
-      color: var(--color-ink);
-      cursor: pointer;
-    }
-
-    /* Presentación principal con imagen de apoyo contable y financiero */
-    .hero {
-      position: relative;
-      display: flex;
-      min-height: min(720px, calc(100svh - 82px));
-      align-items: center;
-      overflow: hidden;
-      background-color: #211e1a;
-      background-image:
-        linear-gradient(90deg, rgba(20, 18, 16, 0.9) 0%, rgba(20, 18, 16, 0.78) 43%, rgba(20, 18, 16, 0.16) 100%),
-        url("./IMAGENES/hero-finanzas.jpg");
-      background-position: center, 62% 50%;
-      background-size: cover;
-      color: #fff;
-    }
-
-    .hero::after {
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
-      content: "";
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      width: min(670px, 66%);
-      padding-block: 100px;
-    }
-
-    .hero .eyebrow {
-      color: #e7cb70;
-    }
-
-    .hero h1 {
-      margin: 0;
-      font-family: var(--font-display);
-      font-size: clamp(3rem, 6.3vw, 5.8rem);
-      font-weight: 400;
-      letter-spacing: -0.025em;
-      line-height: 1.04;
-    }
-
-    .hero h1 span {
-      color: #e5c75e;
-    }
-
-    .hero-copy {
-      max-width: 565px;
-      margin: 24px 0 32px;
-      color: rgba(255, 255, 255, 0.83);
-      font-size: clamp(0.98rem, 1.5vw, 1.1rem);
-    }
-
-    .button {
-      display: inline-flex;
-      min-height: 52px;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 13px 24px;
-      border: 1px solid var(--color-gold);
-      border-radius: 8px;
-      background: var(--color-gold);
-      color: #17140d;
-      cursor: pointer;
-      font-size: 0.9rem;
-      font-weight: 600;
-      transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease, transform 180ms ease;
-    }
-
-    .button:hover,
-    .button.is-pressed {
-      border-color: var(--color-gold-dark);
-      background: var(--color-gold-dark);
-      color: #fff;
-    }
-
-    .button:hover {
-      transform: translateY(-2px);
-    }
-
-    .button:active {
-      transform: translateY(0);
-    }
-
-    .hero-note {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-top: 36px;
-      color: rgba(255, 255, 255, 0.78);
-      font-size: 0.78rem;
-      letter-spacing: 0.05em;
-    }
-
-    .hero-note::before {
-      width: 40px;
-      height: 1px;
-      background: var(--color-gold);
-      content: "";
-    }
-
-    /* Catálogo de servicios profesionales */
-    .services-section {
-      padding-block: 112px 120px;
-      background: var(--color-cream);
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 24px;
-      margin-top: 54px;
-    }
-
-    .service-card {
-      overflow: hidden;
-      border: 1px solid rgba(235, 231, 222, 0.9);
-      border-radius: 16px;
-      background: #fff;
-      box-shadow: var(--shadow-card);
-      transition: transform 200ms ease, box-shadow 200ms ease;
-    }
-
-    .service-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 20px 46px rgba(28, 25, 18, 0.13);
-    }
-
-    .service-art {
-      display: grid;
-      min-height: 190px;
-      place-items: center;
-      overflow: hidden;
-      background:
-        radial-gradient(circle at 76% 22%, rgba(212, 175, 55, 0.17), transparent 28%),
-        linear-gradient(145deg, #f9f5e9, #f0ece2);
-      color: #9a7929;
-    }
-
-    .service-art svg {
-      width: 74px;
-      height: 74px;
-      stroke: currentColor;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      stroke-width: 1.5;
-      fill: none;
-    }
-
-    .service-body {
-      padding: 26px 25px 28px;
-    }
-
-    .service-number {
-      display: inline-block;
-      margin-bottom: 10px;
-      color: var(--color-gold-dark);
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.13em;
-    }
-
-    .service-body h3 {
-      margin: 0 0 9px;
-      font-family: var(--font-display);
-      font-size: 1.45rem;
-      font-weight: 400;
-      line-height: 1.3;
-    }
-
-    .service-body p {
-      margin: 0;
-      color: var(--color-muted);
-      font-size: 0.88rem;
-    }
-
-    /* Audiencias que reciben asesoría contable y financiera */
-    .audience-section {
-      padding-block: 96px 104px;
-      background: #fff;
-    }
-
-    .audience-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 24px;
-      margin-top: 48px;
-    }
-
-    .audience-card {
-      padding: 30px 28px;
-      border: 1px solid var(--color-border);
-      border-radius: 16px;
-      background: var(--color-cream);
-      box-shadow: var(--shadow-card);
-    }
-
-    .audience-card span {
-      display: inline-block;
-      margin-bottom: 14px;
-      color: var(--color-gold-dark);
-      font-size: 0.73rem;
-      font-weight: 600;
-      letter-spacing: 0.15em;
-    }
-
-    .audience-card h3 {
-      margin: 0 0 12px;
-      font-family: var(--font-display);
-      font-size: 1.55rem;
-      font-weight: 400;
-      line-height: 1.25;
-    }
-
-    .audience-card p {
-      margin: 0;
-      color: var(--color-muted);
-      font-size: 0.88rem;
-    }
-
-    /* Presentación personal y enfoque de trabajo */
-    .about-section {
-      display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      align-items: center;
-      gap: clamp(44px, 8vw, 100px);
-      padding-block: 112px;
-    }
-
-    .about-image-wrap {
-      position: relative;
-      max-width: 450px;
-      justify-self: center;
-    }
-
-    .about-image-wrap::before {
-      position: absolute;
-      z-index: -1;
-      top: 24px;
-      right: -22px;
-      bottom: -22px;
-      left: 22px;
-      border: 1px solid var(--color-gold);
-      border-radius: 180px 180px 16px 16px;
-      content: "";
-    }
-
-    .about-image {
-      width: 100%;
-      max-height: 540px;
-      border-radius: 180px 180px 16px 16px;
-      object-fit: cover;
-      object-position: center 35%;
-    }
-
-    .about-copy .eyebrow {
-      margin-bottom: 15px;
-    }
-
-    .about-copy h2 {
-      margin: 0 0 20px;
-      font-family: var(--font-display);
-      font-size: clamp(2.3rem, 4vw, 3.4rem);
-      font-weight: 400;
-      line-height: 1.15;
-    }
-
-    .about-copy p {
-      margin: 0 0 16px;
-      color: var(--color-muted);
-    }
-
-    .about-signature {
-      display: inline-block;
-      margin-top: 8px;
-      color: var(--color-gold-dark);
-      font-family: var(--font-display);
-      font-size: 1.6rem;
-      font-style: italic;
-    }
-
-    /* Valores que guían el acompañamiento a cada cliente */
-    .values-section {
-      padding-block: 104px 112px;
-      background: #191815;
-      color: #fff;
-    }
-
-    .values-section .eyebrow {
-      color: #e5c75e;
-      text-align: center;
-    }
-
-    .values-section .section-heading {
-      color: #fff;
-    }
-
-    .values-section .section-intro {
-      color: rgba(255, 255, 255, 0.68);
-    }
-
-    .values-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 24px;
-      margin-top: 56px;
-    }
-
-    .value-card {
-      padding: 30px 22px;
-      border: 1px solid rgba(212, 175, 55, 0.23);
-      border-radius: 14px;
-      text-align: center;
-    }
-
-    .value-mark {
-      display: grid;
-      width: 52px;
-      height: 52px;
-      place-items: center;
-      margin: 0 auto 17px;
-      border: 1px solid rgba(212, 175, 55, 0.7);
-      border-radius: 50%;
-      color: #e5c75e;
-      font-family: var(--font-display);
-      font-size: 1.55rem;
-    }
-
-    .value-card h3 {
-      margin: 0 0 8px;
-      font-size: 1rem;
-      font-weight: 500;
-    }
-
-    .value-card p {
-      margin: 0;
-      color: rgba(255, 255, 255, 0.66);
-      font-size: 0.82rem;
-    }
-
-    /* Formulario de contacto accesible */
-    .contact-section {
-      padding-block: 112px;
-      background: #fff;
-    }
-
-    .contact-layout {
-      display: grid;
-      grid-template-columns: 0.85fr 1.15fr;
-      align-items: start;
-      gap: clamp(40px, 8vw, 100px);
-      margin-top: 54px;
-    }
-
-    .contact-copy {
-      padding-top: 14px;
-    }
-
-    .contact-copy h3 {
-      margin: 0 0 16px;
-      font-family: var(--font-display);
-      font-size: 2rem;
-      font-weight: 400;
-      line-height: 1.25;
-    }
-
-    .contact-copy p {
-      margin: 0 0 22px;
-      color: var(--color-muted);
-    }
-
-    .contact-prompt {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      color: #37342e;
-      font-size: 0.9rem;
-      font-weight: 500;
-    }
-
-    .contact-prompt span {
-      display: grid;
-      width: 36px;
-      height: 36px;
-      place-items: center;
-      border-radius: 50%;
-      background: #f7f0dc;
-      color: var(--color-gold-dark);
-    }
-
-    .contact-location {
-      margin-top: 16px;
-    }
-
-    .contact-location a:hover {
-      color: var(--color-gold-dark);
-    }
-
-    .map-section {
-      margin-top: 56px;
-    }
-
-    .map-section h3 {
-      margin: 0 0 18px;
-      font-family: var(--font-display);
-      font-size: 1.8rem;
-      font-weight: 400;
-    }
-
-    .map-frame {
-      display: block;
-      width: 100%;
-      height: clamp(260px, 38vw, 430px);
-      border: 0;
-      border-radius: 16px;
-      box-shadow: var(--shadow-card);
-    }
-
-    .contact-form {
-      display: grid;
-      gap: 19px;
-      padding: clamp(24px, 4vw, 38px);
-      border: 1px solid var(--color-border);
-      border-radius: 16px;
-      background: #fff;
-      box-shadow: var(--shadow-card);
-    }
-
-    .form-field {
-      display: grid;
-      gap: 8px;
-    }
-
-    .form-field label {
-      font-size: 0.85rem;
-      font-weight: 500;
-    }
-
-    .form-field input,
-    .form-field textarea {
-      width: 100%;
-      padding: 13px 15px;
-      border: 1px solid #ddd8cd;
-      border-radius: 8px;
-      background: #fff;
-      color: var(--color-ink);
-      font-size: 0.9rem;
-      transition: border-color 180ms ease, box-shadow 180ms ease;
-    }
-
-    .form-field input::placeholder,
-    .form-field textarea::placeholder {
-      color: #969188;
-    }
-
-    .form-field input:focus,
-    .form-field textarea:focus {
-      border-color: var(--color-gold-dark);
-      outline: none;
-      box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.16);
-    }
-
-    .form-field textarea {
-      min-height: 145px;
-      resize: vertical;
-    }
-
-    .contact-form .button {
-      justify-self: start;
-      min-width: 160px;
-    }
-
-    .form-status {
-      min-height: 1.5em;
-      margin: 0;
-      color: #426b3e;
-      font-size: 0.84rem;
-    }
-
-    .form-note {
-      margin: -10px 0 0;
-      color: var(--color-muted);
-      font-size: 0.73rem;
-    }
-
-    /* Pie de página con enlaces sociales */
-    .site-footer {
-      padding-block: 32px;
-      background: #191815;
-      color: rgba(255, 255, 255, 0.76);
-    }
-
-    .footer-content {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .footer-brand {
-      color: #fff;
-      font-family: var(--font-display);
-      font-size: 1.2rem;
-    }
-
-    .footer-copy {
-      margin: 5px 0 0;
-      font-size: 0.75rem;
-    }
-
-    .social-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 18px;
-    }
-
-    .social-links a {
-      font-size: 0.8rem;
-      transition: color 180ms ease;
-    }
-
-    .social-links a:hover {
-      color: #e5c75e;
-    }
-
-    /* Acceso rápido al encabezado después de desplazarse */
-    .back-to-top {
-      position: fixed;
-      z-index: 9;
-      right: 24px;
-      bottom: 24px;
-      display: grid;
-      width: 48px;
-      height: 48px;
-      place-items: center;
-      border: 1px solid var(--color-gold);
-      border-radius: 50%;
-      background: var(--color-gold);
-      color: #17140d;
-      cursor: pointer;
-      font-size: 1.25rem;
-      opacity: 0;
-      pointer-events: none;
-      transform: translateY(10px);
-      transition: opacity 180ms ease, transform 180ms ease, background-color 180ms ease;
-    }
-
-    .back-to-top.is-visible {
-      opacity: 1;
-      pointer-events: auto;
-      transform: translateY(0);
-    }
-
-    .back-to-top:hover {
-      background: var(--color-gold-dark);
-      color: #fff;
-    }
-
-    @media (max-width: 1024px) {
-      .services-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Darlyn Dávila | Contadora pública</title>
+    <style>
+      :root {
+        --gold: #d4af37;
+        --gold-dark: #a7831d;
+        --ink: #171717;
+        --muted: #69665f;
+        --cream: #fbf9f4;
+        --bg: #fff;
       }
-
-      .audience-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: var(--bg);
+        color: var(--ink);
+        line-height: 1.6;
       }
-
-      .values-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .hero {
-        background-position: center, 62% 50%;
-      }
-
-      .about-section {
-        gap: 54px;
-      }
-    }
-
-    @media (max-width: 600px) {
-      html {
-        scroll-padding-top: 72px;
-      }
-
       .container {
-        width: min(100% - 36px, 460px);
+        width: min(1100px, calc(100% - 32px));
+        margin: 0 auto;
       }
-
-      .navbar {
-        min-height: 72px;
+      header {
+        background: rgba(255,255,255,0.96);
+        border-bottom: 1px solid #ebe7de;
+        position: sticky;
+        top: 0;
+        z-index: 10;
       }
-
-      .brand img {
-        width: 46px;
-        height: 46px;
-      }
-
-      .brand-copy strong {
-        font-size: 1.12rem;
-      }
-
-      .brand-copy span {
-        font-size: 0.56rem;
-      }
-
-      .menu-toggle {
-        display: inline-flex;
-      }
-
-      .nav-links {
-        position: absolute;
-        top: calc(100% + 1px);
-        right: 0;
-        left: 0;
-        display: none;
-        align-items: stretch;
-        gap: 0;
-        padding: 8px 18px 16px;
-        border-bottom: 1px solid var(--color-border);
-        background: #fff;
-        box-shadow: 0 14px 20px rgba(28, 25, 18, 0.07);
-      }
-
-      .nav-links.is-open {
+      .nav {
+        min-height: 78px;
         display: flex;
-        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
       }
-
-      .nav-links a {
-        display: block;
-        padding: 11px 0;
+      .brand {
+        font-weight: 700;
+        font-size: 1.2rem;
+        color: var(--ink);
+        text-decoration: none;
       }
-
       .hero {
-        min-height: 690px;
-        align-items: end;
-        background-image:
-          linear-gradient(0deg, rgba(20, 18, 16, 0.95) 0%, rgba(20, 18, 16, 0.76) 42%, rgba(20, 18, 16, 0.08) 100%),
-          url("./IMAGENES/hero-finanzas.jpg");
-        background-position: center, 68% 42%;
+        background: linear-gradient(90deg, rgba(20,18,16,0.85), rgba(20,18,16,0.7)),
+                    url("./IMAGENES/hero-finanzas.jpg") center/cover no-repeat;
+        color: white;
+        padding: 100px 0 80px;
       }
-
-      .hero-content {
-        width: 100%;
-        padding-block: 250px 54px;
-      }
-
       .hero h1 {
-        font-size: clamp(2.85rem, 12vw, 4rem);
+        font-size: clamp(2.4rem, 6vw, 4.5rem);
+        line-height: 1.05;
+        margin: 0 0 16px;
       }
-
-      .hero-copy {
-        margin-block: 18px 24px;
-        font-size: 0.94rem;
+      .hero .accent { color: #e5c75e; }
+      .hero p {
+        max-width: 650px;
+        margin: 0 0 24px;
+        font-size: 1.05rem;
+        color: rgba(255,255,255,0.82);
       }
-
-      .hero-note {
-        margin-top: 26px;
-        font-size: 0.68rem;
+      .cta {
+        display: inline-block;
+        background: var(--gold);
+        color: #17140d;
+        text-decoration: none;
+        padding: 14px 24px;
+        border-radius: 8px;
+        font-weight: 700;
       }
-
-      .services-section,
-      .contact-section {
-        padding-block: 78px;
+      .section {
+        padding: 72px 0;
       }
-
-      .section-heading {
-        font-size: 2.4rem;
+      .section h2 {
+        margin: 0 0 12px;
+        font-size: clamp(2rem, 4vw, 3rem);
+        text-align: center;
       }
-
-      .section-intro {
-        font-size: 0.9rem;
+      .section p {
+        text-align: center;
+        color: var(--muted);
+        max-width: 700px;
+        margin: 0 auto;
       }
-
-      .services-grid {
-        grid-template-columns: minmax(0, 1fr);
+      footer {
+        background: #191815;
+        color: rgba(255,255,255,0.8);
+        padding: 26px 0;
+      }
+      .footer-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+      .social-links {
+        display: flex;
+        flex-wrap: wrap;
         gap: 18px;
-        margin-top: 36px;
       }
-
-      .audience-section {
-        padding-block: 78px;
+      .social-links a {
+        color: white;
+        text-decoration: none;
       }
-
-      .audience-grid {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 16px;
-        margin-top: 36px;
+      .social-links a:hover { color: var(--gold); }
+      @media (max-width: 640px) {
+        .footer-wrap { align-items: flex-start; flex-direction: column; }
       }
-
-      .audience-card {
-        padding: 26px 22px;
-      }
-
-      .service-art {
-        min-height: 165px;
-      }
-
-      .service-body {
-        padding: 22px;
-      }
-
-      .about-section {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 54px;
-        padding-block: 78px;
-      }
-
-      .about-image-wrap {
-        width: min(82%, 350px);
-      }
-
-      .about-copy h2 {
-        font-size: 2.5rem;
-      }
-
-      .values-section {
-        padding-block: 78px;
-      }
-
-      .values-grid {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 14px;
-        margin-top: 36px;
-      }
-
-      .value-card {
-        padding: 24px 20px;
-      }
-
-      .contact-layout {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 24px;
-        margin-top: 36px;
-      }
-
-      .contact-copy h3 {
-        font-size: 1.8rem;
-      }
-
-      .footer-content {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .back-to-top {
-        right: 16px;
-        bottom: 16px;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *,
-      *::before,
-      *::after {
-        scroll-behavior: auto !important;
-        transition-duration: 0.01ms !important;
-      }
-    }
-  </style>
-</head>
-<body>
-  <!-- Encabezado y navegación -->
-  <header class="site-header">
-    <nav class="navbar container" aria-label="Navegación principal">
-      <a class="brand" href="#inicio" aria-label="Darlyn Dávila, inicio">
-        <img src="./IMAGENES/logo.jpeg" alt="Logotipo de Darlyn Dávila, contadora pública">
-        <span class="brand-copy">
-          <strong>Darlyn Dávila</strong>
-          <span>Contadora pública</span>
-        </span>
-      </a>
-      <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">
-        <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"/>
-        </svg>
-      </button>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#servicios">Servicios</a></li>
-        <li><a href="#valores">Valores</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main>
-    <!-- Hero: propuesta de valor y llamado a la acción -->
-    <section class="hero" id="inicio" aria-labelledby="hero-title">
-      <div class="hero-content container">
-        <p class="eyebrow">Asesoría contable y financiera</p>
-        <h1 id="hero-title">Tus finanzas, <span>en buenas manos.</span></h1>
-        <p class="hero-copy">Te acompaño a ordenar tus números, cumplir con tranquilidad y tomar decisiones que impulsen el futuro de tu negocio y tu bienestar financiero.</p>
-        <a class="button" href="#contacto">
-          Hablemos de tus objetivos
-          <span aria-hidden="true">→</span>
-        </a>
-        <p class="hero-note">Soluciones personalizadas para personas y empresas</p>
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container nav">
+        <a href="#inicio" class="brand">Darlyn Dávila</a>
       </div>
-    </section>
+    </header>
 
-    <!-- Catálogo de cinco servicios profesionales -->
-    <section class="services-section" id="servicios" aria-labelledby="services-title">
-      <div class="container">
-        <p class="eyebrow" style="text-align: center;">Lo que puedo hacer por ti</p>
-        <h2 class="section-heading" id="services-title">Soluciones contables a tu medida</h2>
-        <p class="section-intro">Un acompañamiento claro y cercano para que entiendas tus finanzas y enfoques tu energía en lo que más importa.</p>
-        <div class="services-grid">
-          <article class="service-card">
-            <div class="service-art" aria-hidden="true">
-              <svg viewBox="0 0 64 64">
-                <rect x="13" y="8" width="38" height="48" rx="5"/>
-                <path d="M13 21h38M22 30h5m10 0h5M22 39h5m10 0h5M22 48h5m10 0h5"/>
-              </svg>
-            </div>
-            <div class="service-body">
-              <span class="service-number">01 / ORDEN</span>
-              <h3>Contabilidad general</h3>
-              <p>Registro, organización y seguimiento de tus operaciones para que siempre tengas una visión clara de tu situación financiera.</p>
-            </div>
-          </article>
-          <article class="service-card">
-            <div class="service-art" aria-hidden="true">
-              <svg viewBox="0 0 64 64">
-                <path d="M18 8h20l11 11v37H18z"/>
-                <path d="M38 8v12h11M25 31h17M25 39h17M25 47h12"/>
-                <path d="m27 18 3 3 5-6"/>
-              </svg>
-            </div>
-            <div class="service-body">
-              <span class="service-number">02 / CUMPLIMIENTO</span>
-              <h3>Obligaciones tributarias</h3>
-              <p>Preparación y orientación para cumplir tus responsabilidades tributarias con orden, oportunidad y acompañamiento.</p>
-            </div>
-          </article>
-          <article class="service-card">
-            <div class="service-art" aria-hidden="true">
-              <svg viewBox="0 0 64 64">
-                <path d="M10 53h45M16 47V35h9v12m7 0V24h9v23m7 0V13h9v34"/>
-                <path d="m15 28 13-10 9 4 15-14"/>
-                <path d="M45 8h7v7"/>
-              </svg>
-            </div>
-            <div class="service-body">
-              <span class="service-number">03 / VISIÓN</span>
-              <h3>Estados financieros</h3>
-              <p>Información financiera confiable y comprensible para conocer el desempeño de tu actividad y planear el siguiente paso.</p>
-            </div>
-          </article>
-          <article class="service-card">
-            <div class="service-art" aria-hidden="true">
-              <svg viewBox="0 0 64 64">
-                <circle cx="32" cy="19" r="10"/>
-                <path d="M13 55v-5c0-10 8-18 19-18s19 8 19 18v5z"/>
-                <path d="M24 39h16m-8-7v23"/>
-              </svg>
-            </div>
-            <div class="service-body">
-              <span class="service-number">04 / ACOMPAÑAMIENTO</span>
-              <h3>Asesoría financiera</h3>
-              <p>Organización de ingresos y gastos, presupuestos y alternativas para fortalecer tu estabilidad financiera.</p>
-            </div>
-          </article>
-          <article class="service-card">
-            <div class="service-art" aria-hidden="true">
-              <svg viewBox="0 0 64 64">
-                <circle cx="32" cy="32" r="22"/>
-                <path d="M32 18v15l10 6"/>
-                <path d="M22 7h20M7 22v20m50-20v20"/>
-              </svg>
-            </div>
-            <div class="service-body">
-              <span class="service-number">05 / ESTRATEGIA</span>
-              <h3>Planeación y decisiones</h3>
-              <p>Lectura de tus cifras y asesoría estratégica para tomar decisiones con criterio y trabajar hacia metas sostenibles.</p>
-            </div>
-          </article>
+    <main>
+      <section class="hero" id="inicio">
+        <div class="container">
+          <h1>Tus finanzas, <span class="accent">en buenas manos.</span></h1>
+          <p>
+            Te acompaño a ordenar tus números, cumplir con tranquilidad y tomar decisiones
+            que impulsen el futuro de tu negocio y tu bienestar financiero.
+          </p>
+          <a class="cta" href="#contacto">Hablemos de tus objetivos</a>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Público al que se dirigen los servicios -->
-    <section class="audience-section" aria-labelledby="audience-title">
-      <div class="container">
-        <p class="eyebrow" style="text-align: center;">Acompañamiento según tu etapa</p>
-        <h2 class="section-heading" id="audience-title">Soluciones para cada tipo de empresa</h2>
-        <p class="section-intro">Cada negocio tiene retos distintos. La asesoría se adapta a la realidad y los objetivos de quienes están detrás de cada proyecto.</p>
-        <div class="audience-grid">
-          <article class="audience-card">
-            <span>01 / EMPEZAR</span>
-            <h3>Emprendedores</h3>
-            <p>Organiza tus finanzas desde el inicio, comprende tus obligaciones y construye bases contables claras para hacer crecer tu idea con confianza.</p>
-          </article>
-          <article class="audience-card">
-            <span>02 / CONSOLIDAR</span>
-            <h3>Pequeñas y medianas empresas</h3>
-            <p>Fortalece el control financiero, mantén tu contabilidad y obligaciones al día, y obtén información útil para planear el crecimiento de tu pyme.</p>
-          </article>
-          <article class="audience-card">
-            <span>03 / PROYECTAR</span>
-            <h3>Empresas grandes</h3>
-            <p>Recibe acompañamiento profesional en gestión contable, análisis financiero y cumplimiento para respaldar decisiones y objetivos empresariales.</p>
-          </article>
+      <section class="section" id="contacto">
+        <div class="container">
+          <h2>Contacto</h2>
+          <p>Estoy disponible para ayudarte con asesoría contable y financiera.</p>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
-    <!-- Presentación de la contadora y su compromiso -->
-    <section class="about-section container" aria-labelledby="about-title">
-      <div class="about-image-wrap">
-        <img class="about-image" src="./IMAGENES/darlyn-davila.jpeg" alt="Darlyn Dávila, contadora pública y asesora financiera" loading="lazy">
-      </div>
-      <div class="about-copy">
-        <p class="eyebrow">Una aliada para tu tranquilidad</p>
-        <h2 id="about-title">Cuentas claras. Decisiones con confianza.</h2>
-        <p>Sé que detrás de cada cifra hay metas, esfuerzo y proyectos. Por eso, mi asesoría va más allá de los números: me enfoco en entender tu realidad y brindarte orientación cercana, clara y útil.</p>
-        <p>Ya seas una persona que quiere organizar sus finanzas o una empresa que busca crecer con bases sólidas, construimos un camino acorde con tus necesidades.</p>
-        <span class="about-signature">Darlyn Dávila</span>
-      </div>
-    </section>
-
-    <!-- Valores fundamentales del servicio -->
-    <section class="values-section" id="valores" aria-labelledby="values-title">
-      <div class="container">
-        <p class="eyebrow">La forma en que trabajo</p>
-        <h2 class="section-heading" id="values-title">Valores que generan confianza</h2>
-        <p class="section-intro">Una relación profesional sólida empieza por escuchar, actuar con integridad y comprometernos con tus objetivos.</p>
-        <div class="values-grid">
-          <article class="value-card">
-            <span class="value-mark" aria-hidden="true">◇</span>
-            <h3>Confianza</h3>
-            <p>Comunicación honesta y cuidado responsable de tu información.</p>
-          </article>
-          <article class="value-card">
-            <span class="value-mark" aria-hidden="true">✓</span>
-            <h3>Compromiso</h3>
-            <p>Atención dedicada y seguimiento en cada etapa del proceso.</p>
-          </article>
-          <article class="value-card">
-            <span class="value-mark" aria-hidden="true">✳</span>
-            <h3>Profesionalismo</h3>
-            <p>Rigor, criterio y claridad para acompañar cada decisión.</p>
-          </article>
-          <article class="value-card">
-            <span class="value-mark" aria-hidden="true">♡</span>
-            <h3>Cercanía</h3>
-            <p>Soluciones personalizadas, explicadas en un lenguaje sencillo.</p>
-          </article>
+    <footer>
+      <div class="container footer-wrap">
+        <div>
+          <strong style="color:#fff;">Darlyn Dávila</strong>
         </div>
+        <nav class="social-links" aria-label="Redes sociales">
+          <a href="https://wa.me/573122059243" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          <a href="https://www.linkedin.com/in/darlyn-danery-davila-diaz-47683a446" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </nav>
       </div>
-    </section>
-
-    <!-- Formulario de contacto -->
-    <section class="contact-section" id="contacto" aria-labelledby="contact-title">
-      <div class="container">
-        <p class="eyebrow" style="text-align: center;">El primer paso es conversar</p>
-        <h2 class="section-heading" id="contact-title">Hagamos crecer tus proyectos</h2>
-        <p class="section-intro">Cuéntame qué necesitas y encontraremos la mejor forma de trabajar juntos.</p>
-        <div class="contact-layout">
-          <div class="contact-copy">
-            <h3>Una conversación puede darte mucha claridad.</h3>
-            <p>Completa el formulario para contarme sobre tus objetivos. Me encantará conocer tu caso y orientarte sobre los próximos pasos.</p>
-            <div class="contact-prompt">
-              <span aria-hidden="true">✦</span>
-              Asesoría para personas y empresas
-            </div>
-            <div class="contact-prompt contact-location">
-              <span aria-hidden="true">⌖</span>
-              <a href="https://www.google.com/maps/search/?api=1&amp;query=Cali%2C%20Colombia" target="_blank" rel="noopener noreferrer" aria-label="Ver ubicación de Darlyn Dávila en Cali, Colombia en Google Maps">
-                Cali, Colombia
-              </a>
-            </div>
-          </div>
-          <form class="contact-form" id="contact-form">
-            <div class="form-field">
-              <label for="nombre">Nombre</label>
-              <input id="nombre" name="nombre" type="text" placeholder="¿Cómo te llamas?" autocomplete="name" required>
-            </div>
-            <div class="form-field">
-              <label for="correo">Correo electrónico</label>
-              <input id="correo" name="correo" type="email" placeholder="tunombre@correo.com" autocomplete="email" required>
-            </div>
-            <div class="form-field">
-              <label for="mensaje">¿Cómo puedo ayudarte?</label>
-              <textarea id="mensaje" name="mensaje" placeholder="Cuéntame brevemente qué servicio o asesoría estás buscando..." required></textarea>
-            </div>
-            <button class="button" type="submit">Enviar mensaje <span aria-hidden="true">→</span></button>
-            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
-            <p class="form-note">Este formulario es una demostración y todavía no envía tus datos a un correo.</p>
-          </form>
-        </div>
-        <div class="map-section">
-          <h3 id="map-title">Encuéntrame en Cali</h3>
-          <iframe
-            class="map-frame"
-            title="Mapa de Google Maps con la ubicación de Cali, Colombia"
-            src="https://www.google.com/maps?q=Cali%2C%20Colombia&amp;output=embed"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            allowfullscreen>
-          </iframe>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Pie de página y redes sociales -->
-  <footer class="site-footer">
-    <div class="footer-content container">
-      <div>
-        <a class="footer-brand" href="#inicio">Darlyn Dávila</a>
-        <p class="footer-copy">&copy; <span id="current-year"></span> Darlyn Dávila. Todos los derechos reservados.</p>
-      </div>
-      <nav class="social-links" aria-label="Redes sociales">
-        <a href="https://wa.me/573122059243?text=Hola%2C%20Darlyn.%20Me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20sobre%20tus%20servicios%20contables." target="_blank" rel="noopener noreferrer" aria-label="Contactar a Darlyn por WhatsApp">
-          <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M20.5 11.8a8.5 8.5 0 0 1-12.6 7.5L3 20.5l1.3-4.7a8.5 8.5 0 1 1 16.2-4ZM8.4 8.1c-.2-.5-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4s-1 1-.9 2.3 1 2.7 1.1 2.9c.1.2 2 3.2 4.9 4.4 2.4 1 2.9.8 3.5.8s1.8-.7 2-1.3.3-1.1.2-1.2-.2-.2-.5-.4l-1.8-.9c-.2-.1-.4-.1-.6.2s-.7.9-.9 1.1-.3.2-.6.1a7.4 7.4 0 0 1-2.2-1.4 8.3 8.3 0 0 1-1.5-1.9c-.2-.3 0-.4.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5Z" fill="currentColor"/>
-          </svg>
-          WhatsApp
-        </a>
-        <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      </nav>
-    </div>
-  </footer>
-
-  <!-- Botón flotante para regresar al inicio -->
-  <button class="back-to-top" id="back-to-top" type="button" aria-label="Volver arriba" title="Volver arriba">
-    <span aria-hidden="true">↑</span>
-  </button>
-
-  <script>
-    // Alterna el menú móvil y lo cierra al navegar a una sección.
-    const menuToggle = document.querySelector(".menu-toggle");
-    const navLinks = document.querySelector(".nav-links");
-
-    menuToggle.addEventListener("click", () => {
-      const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
-      menuToggle.setAttribute("aria-expanded", String(!isOpen));
-      menuToggle.setAttribute("aria-label", isOpen ? "Abrir menú" : "Cerrar menú");
-      navLinks.classList.toggle("is-open", !isOpen);
-    });
-
-    navLinks.addEventListener("click", (event) => {
-      if (event.target.closest("a")) {
-        navLinks.classList.remove("is-open");
-        menuToggle.setAttribute("aria-expanded", "false");
-        menuToggle.setAttribute("aria-label", "Abrir menú");
-      }
-    });
-
-    // Refuerza visualmente la interacción del usuario con los botones.
-    document.querySelectorAll(".button").forEach((button) => {
-      button.addEventListener("click", () => {
-        button.classList.add("is-pressed");
-        window.setTimeout(() => button.classList.remove("is-pressed"), 450);
-      });
-    });
-
-    // Confirma la validación local sin simular un envío a un servidor.
-    const contactForm = document.querySelector("#contact-form");
-    const formStatus = document.querySelector("#form-status");
-
-    contactForm.addEventListener("submit", (event) => {
-      event.preventDefault();
-
-      if (!contactForm.reportValidity()) {
-        return;
-      }
-
-      const name = contactForm.elements.nombre.value.trim();
-      formStatus.textContent = `¡Gracias, ${name}! El formulario se completó correctamente. Recuerda que esta demostración aún no envía tus datos.`;
-      contactForm.reset();
-    });
-
-    // Muestra el acceso al inicio solo después de desplazarse por la página.
-    const backToTop = document.querySelector("#back-to-top");
-
-    const updateBackToTopVisibility = () => {
-      backToTop.classList.toggle("is-visible", window.scrollY > 420);
-    };
-
-    window.addEventListener("scroll", updateBackToTopVisibility, { passive: true });
-    updateBackToTopVisibility();
-
-    backToTop.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-
-    // Mantiene actualizado el año de derechos reservados.
-    document.querySelector("#current-year").textContent = new Date().getFullYear();
-  </script>
-</body>
+    </footer>
+  </body>
 </html>
